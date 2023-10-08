@@ -9,8 +9,8 @@ from .models import Question
 class QuestionModelTests(TestCase):
     def test_was_published_recently_with_future_question(self):
         """
-        was_published_recently() returns False for questions whose pub_date
-        is in the future.
+        was_published_recently() retorna Falso as pub_date
+        que estão no futuro.
         """
         time = timezone.now() + datetime.timedelta(days=30)
         future_question = Question(pub_date=time)
@@ -18,8 +18,8 @@ class QuestionModelTests(TestCase):
 
     def test_was_published_recently_with_old_question(self):
         """
-    was_published_recently() returns False for questions whose pub_date
-    is older than 1 day.
+    was_published_recently() retorna Falso as pub_date
+    que tem mais de um dia
     """
         time = timezone.now() - datetime.timedelta(days=1, seconds=1)
         old_question = Question(pub_date=time)
